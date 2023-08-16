@@ -42,6 +42,7 @@ const styleExternalIcon = computed(() => ({
 /**
  * 内部图标
  */
+const iconName = computed(() => `#icon-${props.icon}`)
 </script>
 
 <style lang="scss" scoped>
