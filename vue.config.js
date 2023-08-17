@@ -4,6 +4,15 @@ function resolve(dir) {
 }
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  devServer: {
+    proxy: {
+      // 当地址中包含/api的时候，触发此代理
+      '/api': {
+        target: 'https://api.imooc-admin.lgdsunday.club/',
+        changeOrigin: true
+      }
+    }
+  },
   transpileDependencies: true,
   chainWebpack(config) {
     config.module
